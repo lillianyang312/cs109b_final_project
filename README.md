@@ -1,15 +1,13 @@
 # Vessel Trajectory Prediction Using Deep Learning on AIS Data
 
-**CS 109B Milestone 4 — Group 24**  
+**CS 109B Milestone 4, Group 24**  
 **Members:** Yuyang Chen, Tim Guo, Lillian Yang, Grace Yang
 
 ---
 
 ## Overview
 
-This project applies deep learning to predict future vessel trajectories from historical Automatic Identification System (AIS) data. We compare three architectures — an MLP baseline, an LSTM, and a Transformer (Encoder + Query Decoder) — on a large-scale West Coast AIS dataset.
-
-**Key result:** The Transformer achieves a mean Mean Distance Error (MDE) of **0.40 km**, matching the MLP baseline, while the LSTM underperforms due to error accumulation in autoregressive rollout. A 60-minute forecast error of ~0.76 km is well within the 1–5 nautical mile AIS reporting radius used by maritime traffic management.
+This project applies deep learning to predict future vessel trajectories from historical Automatic Identification System (AIS) data. We compare three architectures, an MLP baseline, an LSTM, and a Transformer (Encoder + Query Decoder), on a large-scale West Coast AIS dataset.
 
 ---
 
@@ -19,19 +17,9 @@ This project applies deep learning to predict future vessel trajectories from hi
 cs109b_final_project/
 ├── cs1090b_ms4_main_group24.ipynb  # Main notebook (run this)
 ├── dataloader.py                   # PyTorch Dataset & DataLoader
-├── dataloader.ipynb                # Dataloader exploration notebook
 ├── best_lstm.pt                    # Saved LSTM checkpoint
 ├── trained_models/                 # Saved Transformer checkpoints
 ├── processed/                      # Preprocessed feature stats
-├── lstm_results/                   # LSTM training curves
-├── splits_West_Coast_3min.parquet  # Train/val/test split index
-├── feature_stats_West_Coast_3min.csv  # Feature normalization stats
-├── eda_density.png                 # EDA visualizations
-├── eda_trip_stats.png
-├── model_comparison.png            # Results comparison plot
-├── generate_trajectories.ipynb     # Data pipeline: raw → parquet
-├── make_splits.ipynb               # Train/val/test splitting
-├── merge_monthly.ipynb             # Monthly data merging
 └── README.md
 ```
 
@@ -69,7 +57,7 @@ Open and run `cs1090b_ms4_main_group24.ipynb` in JupyterLab (or Jupyter Notebook
 7. **Evaluates all three models** on the test set (Section 8)
 8. **Plots Results & Comparison** (Section 9)
 
-All models have saved checkpoints — the notebook will **load weights automatically** and skip training.
+All models have saved checkpoints — the notebook will load weights automatically and skip training.
 
 ### GPU / CPU
 
@@ -103,6 +91,6 @@ The dataset is based on NOAA/USCG AIS broadcast records for the West Coast (3-mi
 
 ![Model Comparison](model_comparison.png)
 
-- **Transformer vs MLP:** −0.9% mean MDE (marginal improvement)
-- **LSTM vs MLP:** +181.9% mean MDE (significantly worse due to autoregressive error accumulation)
+- Transformer vs MLP: −0.9% mean MDE (marginal improvement)
+- LSTM vs MLP: +181.9% mean MDE (significantly worse due to autoregressive error accumulation)
 
