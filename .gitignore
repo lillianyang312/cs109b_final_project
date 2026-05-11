@@ -1,0 +1,17 @@
+# Large raw data file - upload manually (2.0 GB)
+processed/ais_trajectories_West_Coast_3min.parquet
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyc
+.ipynb_checkpoints/
+__pycache__
+
+# OS
+.DS_Store
+*.swp
+
+# Raw data
+raw/
+*.csv.zst
