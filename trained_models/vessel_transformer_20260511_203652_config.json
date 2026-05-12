@@ -1,0 +1,16 @@
+{
+    "model_idx": "20260511_203652",
+    "input_dim": 7,
+    "d_model": 64,
+    "nhead": 4,
+    "num_encoder_layers": 4,
+    "num_decoder_layers": 2,
+    "dim_feedforward": 256,
+    "droupout": 0.2,
+    "train_subset_size": null,
+    "val_subset_size": null,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "num_epochs": 30,
+    "final_val_loss": 0.20899822700199555
+}
